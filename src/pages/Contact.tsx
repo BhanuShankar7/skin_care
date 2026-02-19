@@ -39,21 +39,21 @@ const Contact = () => {
               <MapPin className="gold-text mt-1 shrink-0" size={20} strokeWidth={1.2} />
               <div>
                 <h3 className="font-heading text-lg text-foreground mb-1">Visit Us</h3>
-                <p className="font-body text-sm text-muted-foreground">42 Botanical Gardens Lane, London, SW1A 1AA</p>
+                <p className="font-body text-sm text-muted-foreground">Gallery Milinium plaza Hyderabad</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Phone className="gold-text mt-1 shrink-0" size={20} strokeWidth={1.2} />
               <div>
                 <h3 className="font-heading text-lg text-foreground mb-1">Call Us</h3>
-                <p className="font-body text-sm text-muted-foreground">+44 20 7946 0958</p>
+                <p className="font-body text-sm text-muted-foreground">+9618344086</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Mail className="gold-text mt-1 shrink-0" size={20} strokeWidth={1.2} />
               <div>
                 <h3 className="font-heading text-lg text-foreground mb-1">Email</h3>
-                <p className="font-body text-sm text-muted-foreground">hello@verdeluxe.com</p>
+                <p className="font-body text-sm text-muted-foreground">sureshpeddinti221@gmail.com</p>
               </div>
             </div>
           </div>
