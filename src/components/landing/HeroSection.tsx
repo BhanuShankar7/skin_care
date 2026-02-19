@@ -18,7 +18,7 @@ const HeroSection = ({ triggerAnimation = true }: { triggerAnimation?: boolean }
         background: "radial-gradient(ellipse at center, transparent 40%, hsl(153 100% 13% / 0.6) 100%)"
       }} />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
+      <div key={triggerAnimation ? "animate" : "initial"} className="relative z-10 text-center px-6 max-w-4xl">
         <div className={animationClass("gold-divider mb-8 animate-back-in-up")} />
         <h1 className={animationClass("font-heading text-4xl md:text-6xl lg:text-7xl text-cream leading-tight animate-back-in-up")}>
           Nature Refined.
