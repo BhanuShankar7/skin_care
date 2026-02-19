@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 103 28% 87%;
+    --foreground: 153 100% 13%;
+
+    --card: 153 100% 13%;
+    --card-foreground: 60 20% 95%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 100% 13%;
+
+    --primary: 153 100% 13%;
+    --primary-foreground: 60 20% 95%;
+
+    --secondary: 134 27% 29%;
+    --secondary-foreground: 60 20% 95%;
+
+    --muted: 103 20% 82%;
+    --muted-foreground: 128 19% 35%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 153 100% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 20% 95%;
+
+    --border: 103 20% 78%;
+    --input: 103 20% 78%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    --gold: 43 74% 49%;
+    --gold-light: 43 60% 65%;
+    --cream: 60 20% 95%;
+    --sage: 103 28% 87%;
+    --deep-green: 134 27% 29%;
+    --royal-green: 128 19% 35%;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+
+    --sidebar-background: 153 100% 13%;
+    --sidebar-foreground: 60 20% 95%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 153 100% 13%;
+    --sidebar-accent: 134 27% 29%;
+    --sidebar-accent-foreground: 60 20% 95%;
+    --sidebar-border: 134 27% 29%;
+    --sidebar-ring: 43 74% 49%;
+  }
+
+  .dark {
+    --background: 153 100% 13%;
+    --foreground: 60 20% 95%;
+    --card: 134 27% 29%;
+    --card-foreground: 60 20% 95%;
+    --popover: 153 100% 13%;
+    --popover-foreground: 60 20% 95%;
+    --primary: 43 74% 49%;
+    --primary-foreground: 153 100% 13%;
+    --secondary: 128 19% 35%;
+    --secondary-foreground: 60 20% 95%;
+    --muted: 134 27% 25%;
+    --muted-foreground: 103 20% 70%;
+    --accent: 43 74% 49%;
+    --accent-foreground: 153 100% 13%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 20% 95%;
+    --border: 134 27% 25%;
+    --input: 134 27% 25%;
+    --ring: 43 74% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .gold-divider {
+    @apply h-px w-24 mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .luxury-card {
+    @apply rounded-lg overflow-hidden transition-all duration-500;
+    background: hsl(var(--card));
+    box-shadow: 0 4px 30px hsl(var(--primary) / 0.15);
+  }
+
+  .luxury-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px hsl(var(--primary) / 0.25);
+  }
+
+  .glass-panel {
+    background: hsl(var(--primary) / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .gold-text {
+    color: hsl(var(--gold));
+  }
+
+  .gold-border {
+    border-color: hsl(var(--gold) / 0.4);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  .btn-luxury {
+    @apply px-8 py-3 font-body text-sm tracking-[0.2em] uppercase transition-all duration-400;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+  }
+
+  .btn-luxury-primary {
+    @apply btn-luxury;
+    background: hsl(var(--primary));
+    color: hsl(var(--cream));
+    border: 1px solid hsl(var(--gold) / 0.4);
+  }
+
+  .btn-luxury-primary:hover {
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--gold));
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.2);
+  }
+
+  .btn-luxury-outline {
+    @apply btn-luxury;
+    background: transparent;
+    color: hsl(var(--cream));
+    border: 1px solid hsl(var(--gold) / 0.5);
+  }
+
+  .btn-luxury-outline:hover {
+    background: hsl(var(--gold) / 0.1);
+    border-color: hsl(var(--gold));
+  }
+
+  .nav-link-luxury {
+    @apply relative text-sm tracking-[0.15em] uppercase transition-colors duration-300;
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: hsl(var(--cream));
+  }
+
+  .nav-link-luxury::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px scale-x-0 transition-transform duration-300 origin-right;
+    background: hsl(var(--gold));
+  }
+
+  .nav-link-luxury:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .nav-link-luxury:hover {
+    color: hsl(var(--gold));
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay {
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .duration-600 {
+    transition-duration: 600ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes backInUp {
+  0% {
+    transform: translateY(100px) scale(0.7);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-back-in-up {
+  animation: backInUp 0.8s ease-out forwards;
+}
+
+.animate-back-in-up-delay {
+  animation: backInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-back-in-up-delay-2 {
+  animation: backInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
