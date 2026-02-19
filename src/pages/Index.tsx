@@ -5,10 +5,14 @@ import IngredientsSection from "@/components/landing/IngredientsSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import CTASection from "@/components/landing/CTASection";
 
-const Index = () => {
+interface IndexProps {
+  isLoaded?: boolean;
+}
+
+const Index = ({ isLoaded = true }: IndexProps) => {
   return (
     <main>
-      <HeroSection />
+      <HeroSection triggerAnimation={isLoaded} />
       <AboutSection />
       <FeaturedProducts />
       <IngredientsSection />

@@ -38,7 +38,7 @@ const App = () => {
             <Navbar />
             <CartDrawer />
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Index isLoaded={!loading} />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/about" element={<About />} />
